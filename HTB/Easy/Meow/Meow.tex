@@ -1,0 +1,30 @@
+\documentclass[12pt, letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+
+% Paquete esencial para seleccionar fuentes del sistema
+\usepackage{fontspec}
+
+\usepackage{graphicx}
+
+% Configuración de idioma (opcional pero recomendado para tildes y ñ)
+\usepackage[spanish]{babel}
+
+% Selección de la fuente Arial
+% Nota: Asegúrate de que el nombre coincida con el instalado en tu sistema
+\setmainfont{Arial}
+
+%Variables
+\newcommand{\logoHtb}{img/logoh.png}
+\newcommand{\logoMaquina}{img/logo.png}
+\newcommand{\nombreMaquina}{MEOW}
+
+\begin{document}
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.5\textwidth]{\logoHtb}\par\vspace{1cm}
+	\textbf{INFORME TÉCNICO} \par\vspace{0.5cm}
+	\textbf{MAQUINA \nombreMaquina}\par\vspace{0.5cm}
+	\includegraphics[width=0.3\textwidth]{\logoMaquina}
+\end{titlepage}
+\end{document}

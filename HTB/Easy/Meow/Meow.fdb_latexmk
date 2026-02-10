@@ -1,0 +1,41 @@
+# Fdb version 4
+["xdvipdfmx"] 1770700935.14473 "Meow.xdv" "Meow.pdf" "Meow" 1770700935.44983 0
+  "Meow.xdv" 1770700935.07839 840 15546cf7042c741dc82c35ca54586c64 "xelatex"
+  (generated)
+  "Meow.pdf"
+  (rewritten before read)
+["xelatex"] 1770700934.63539 "Meow.tex" "Meow.xdv" "Meow" 1770700935.44864 0
+  "/etc/texmf/web2c/texmf.cnf" 1770360035.98361 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf" 1622145181 26965 3b6d1655ad716f98e788b1fb9f2e87b8 ""
+  "/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty" 1768770623 147019 0d4381bf532725818b265a009d12c7ac ""
+  "/usr/share/texlive/texmf-dist/tex/generic/babel/locale/es/babel-es.ini" 1763931111 4303 c450545e79f0d9ac3027df4bd9b132d8 ""
+  "/usr/share/texlive/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex" 1749585145 374 26aa36054295520df734dd14cd75addc ""
+  "/usr/share/texlive/texmf-dist/tex/generic/babel/xebabel.def" 1768770623 17545 acc179580847617ca1f595b3b00f66e2 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1748806692 20144 b966087dda3b194755eb460d32e2ef75 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty" 1761946296 5275 6f9d359641b36842524cdb97716ab75f ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty" 1738182759 5048 0270515b828149155424600fd2d58ac5 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo" 1748806692 8449 8dc66c6c313c8eb2d774af83bca435dd ""
+  "/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty" 1759176595 164714 a0cc5579dc5aec4384653d8dd1b3832a ""
+  "/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.cfg" 1532898934 549 c4adac819276241fea8eb79c5ab7b99e ""
+  "/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty" 1759176595 3804 debc05110ffb506cef68ea4e72c7bcee ""
+  "/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1465944070 1224 978390e9c2234eab29404bc21b268d1e ""
+  "/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def" 1762027770 14788 68cddb076430acc268ef4203b6523355 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty" 1748806692 18363 69bb4f5538964bfea50d1e6d89cbe69f ""
+  "/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty" 1748806692 8118 43b99e52946c33a23f5f43b52d5cc5ec ""
+  "/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty" 1748806692 2671 d9941f4bf4750e9b0603c9a2ec54693b ""
+  "/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty" 1748806692 4023 e66acf578d6b564c4670fb57ff336a7a ""
+  "/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def" 1761248321 32682 e8e9b6eadc6ea167c7d41a9120ebbad7 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty" 1769028462 6558 45786cbbf5684a09ee65aa45a7b367e0 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty" 1761248321 10176 c2fc1c663b3f3899ddac6e6ed3fb1d7e ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1769369718 41603 27f93b3067076450172040dcd57ca8b3 ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1769369718 41603 27f93b3067076450172040dcd57ca8b3 ""
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1770685712 5951540 6f39230c9403eec6319c04f08a1b4910 ""
+  "Meow.aux" 1770700935.07236 232 73e76a51b3ab6978a073af3f7982faa6 "xelatex"
+  "Meow.tex" 1770700932.76664 821 57a13adbcdfbc561177cb40b1d8f29c5 ""
+  "img/logo.png" 1770697663.60712 76759 d526f0c99594f4a1c21d4e4823a6f520 ""
+  "img/logoh.png" 1770698720.7304 3162 b73634e1a8393a34fef5db7c2177db2e ""
+  (generated)
+  "Meow.aux"
+  "Meow.log"
+  "Meow.xdv"
+  (rewritten before read)
