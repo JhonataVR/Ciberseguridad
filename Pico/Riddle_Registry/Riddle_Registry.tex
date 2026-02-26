@@ -1,19 +1,39 @@
 \documentclass[12pt, letterpaper]{article}
 
-% Paquete necesario para gestionar fuentes con XeLaTeX
+% --- IDIOMA Y FUENTES ---
+% Solución moderna para error de babel en XeLaTeX (Arch Linux)
+\usepackage[provide=*]{babel}
+\babelprovide[import, main]{spanish}
+
 \usepackage{fontspec}
+\setmainfont{Arial}
 
-% Configuración de márgenes básicos
+% --- CONFIGURACIÓN DE TÍTULOS (TODO A 12PT) ---
+\usepackage{titlesec}
+% Forzamos secciones y subsecciones a 12pt (el segundo número 14 es el interlineado)
+\titleformat{\section}{\normalfont\fontsize{12}{14}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\fontsize{12}{14}\bfseries}{\thesubsection}{1em}{}
+
+% --- MÁRGENES Y ESTÉTICA ---
 \usepackage[margin=1in]{geometry}
-
-% Paquete de inserción de imágenes
 \usepackage{graphicx}
 \usepackage{tcolorbox}
 \usepackage{subcaption}
 
-% Definimos Arial como la fuente principal
-\setmainfont{Arial}
+% Redefinición de \maketitle para que el título también sea 12pt
+\makeatletter
+\renewcommand{\maketitle}{
+  \begin{center}
+    {\fontsize{12}{14}\bfseries \@title \par}
+    \vspace{0.4cm}
+    {\fontsize{12}{14} \@author \par}
+    {\fontsize{12}{14} \@date \par}
+    \vspace{0.8cm}
+  \end{center}
+}
+\makeatother
 
+% --- DATOS DEL DOCUMENTO ---
 \title{Reporte de reto Forense - PicoCTF}
 \author{Snaider}
 \date{\today}
@@ -24,6 +44,7 @@
 
 \section{Introducción}
 Primeramente vemos que tenemos un reto forense el cual se trata de analizar un documento para ver lo que lleva oculto, llevando mas allá nuestros conocimientos en análisis de archivos.
+
 \section{Revisión del documento}
 \begin{itemize}
 
@@ -43,9 +64,15 @@ Primeramente vemos que tenemos un reto forense el cual se trata de analizar un d
     width=\linewidth,
     height=10cm
 ]{./img/vista_superficial.png}
+    \centering
+    \vspace{0.2cm}
+    \textbf{Textos censurados}
 \end{tcolorbox}
+
 \par\vspace{1cm}
+
 \item Se puede ver que si seleccionamos la parte censurada y la copiamos a un editor de texto habremos obtenido datos interesantes.
+
 \begin{tcolorbox}[
     colframe=black,
     boxrule=1pt,
@@ -57,21 +84,44 @@ Primeramente vemos que tenemos un reto forense el cual se trata de analizar un d
     \begin{minipage}{0.5\linewidth}
         \centering
         \includegraphics[width=\linewidth]{./img/textos_censurados.png}
-        Textos censurados
+        \small Textos censurados
     \end{minipage}
     \hfill
     \begin{minipage}{0.47\linewidth}
         \centering
         \includegraphics[width=\linewidth]{./img/textos_descubiertos.png}
-        Contenido descubierto de textos censurados
+        \small Contenido descubierto
     \end{minipage}
 
     \vspace{0.5cm}
     \centering   
     \textbf{Descubrimiento de textos censurados}
 \end{tcolorbox}
-\item Viendo que en el anterior paso no encontramos nada relevante tendremos que intentar otros metodos, intentemos ver los datos en bruto (Raw Data) usando la herramienta \textbf{strings}, haber que encontramos.
-    \begin{tcolorbox}[
+
+\item Viendo que en el anterior paso no encontramos nada relevante tendremos que intentar otros métodos, intentemos ver los datos en bruto (Raw Data) usando la herramienta \textbf{strings}, a ver qué encontramos.
+
+\begin{tcolorbox}[
+    colframe=black,
+    boxrule=1pt,
+    sharp corners,
+    boxsep=0pt,
+    top=0pt,
+    bottom=7pt,
+    left=0pt,
+    right=0pt
+]
+    \begin{minipage}{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{./img/raw_data.png}
+    \end{minipage}
+    \centering  
+        \vspace{0cm}
+
+    \textbf{Datos en bruto}
+\end{tcolorbox}
+
+\item Desciframos el cifrado sospechoso.
+\begin{tcolorbox}[
     colframe=black,
     boxrule=1pt,
     sharp corners,
@@ -82,34 +132,13 @@ Primeramente vemos que tenemos un reto forense el cual se trata de analizar un d
 ]
     \begin{minipage}{\linewidth}
         \centering
-        \includegraphics[width=\linewidth]{./img/raw_data.png}
-    \end{minipage}
-
-    \vspace{0.2cm}
-    \centering   
-    \textbf{Datos en bruto}
-\end{tcolorbox}
-
-\item Desciframos el cifrado sospechoso
-    \begin{tcolorbox}[
-    colframe=black,
-    boxrule=1pt,
-    sharp corners,
-    boxsep=0pt,
-    top=0pt,
-    left=0pt,
-    right=0pt
-    ]
-    \begin{minipage}{\linewidth}
-        \centering
         \includegraphics[width=\linewidth]{./img/flag.png}
     \end{minipage}
-
+    
+    \centering
     \vspace{0.2cm}
-    \centering   
     \textbf{Descifrando}
-
-    \end{tcolorbox}
+\end{tcolorbox}
 
 \item Introducimos la flag en el reto de Pico CTF para ver si realmente acabamos el reto.
 \begin{tcolorbox}[
@@ -120,19 +149,17 @@ Primeramente vemos que tenemos un reto forense el cual se trata de analizar un d
     top=0pt,
     left=0pt,
     right=0pt
-    ]
+]
     \begin{minipage}{\linewidth}
         \centering
         \includegraphics[width=\linewidth]{./img/introduciendo_flag.png}
     \end{minipage}
-
     \vspace{0.5cm}
     \centering   
     \textbf{Introduciendo flag}
+\end{tcolorbox}
 
-    \end{tcolorbox}
-
-\item Y listo, nos salio las felicitaciones, reto resuelto.
+\item Y listo, nos salió las felicitaciones, reto resuelto.
 
 \begin{tcolorbox}[
     colframe=black,
@@ -140,19 +167,20 @@ Primeramente vemos que tenemos un reto forense el cual se trata de analizar un d
     sharp corners,
     boxsep=0pt,
     top=10pt,
+    bottom=10pt,
     left=10pt,
     right=10pt
-    ]
+]
     \begin{minipage}{\linewidth}
         \centering
         \includegraphics[width=\linewidth]{./img/solucionado.png}
     \end{minipage}
+    \centering 
+        \vspace{0.1cm}
 
-    \vspace{0.5cm}
-    \centering   
     \textbf{Reto resuelto}
+\end{tcolorbox}
 
-    \end{tcolorbox}
 \end{itemize}
 
 \end{document}
