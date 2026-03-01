@@ -35,7 +35,7 @@
 
 % --- DATOS DEL DOCUMENTO ---
 \title{Log Hunt - PicoCTF}
-\author{Snaider}
+\author{5na1d3r}
 \date{\today}
 
 \begin{document}
@@ -43,53 +43,55 @@
 \maketitle
 
 \section{Introducción}
-Primeramente observamos que en el reto ya nos da una pista al decirnos "Our server seems to be leaking pieces of a secret flag in its logs", con eso ya sabemos que tenemos que armar la flag que esta en pedazos dentro del log, demosle un vistazo al archivo.
-\section{Revisión del documento}
+Primeramente observamos que en el reto ya nos da una pista al decirnos "Our server seems to be leaking pieces of a secret flag in its logs", con eso ya sabemos que tenemos que armar la flag que esta en pedazos dentro del log, vamos a darle un vistazo al archivo.
+\section{Revisión del archivo}
 \begin{itemize}
 
-\item Como primera impresión observamos que hay partes censuradas en el documento.
+\item Como primera impresión observamos que hay filas interesantes y con un formato familiar a las flags de Pico CTF.
 
 \begin{tcolorbox}[
     colframe=black,
     boxrule=1pt,
     sharp corners,
     boxsep=0pt,
+    top=0pt,
+    bottom=0pt,
+    left=0pt,
+    right=0pt
+    
+]
+  \includegraphics[
+  width=\textwidth,
+  height=3.5cm
+  ]{./img/archivo_log.png}
+    \centering
+    \vspace{0.2cm}
+    \textbf{Archivo .log}
+\end{tcolorbox}
+
+
+\item Así como en la anterior imagen hay pedazos de la flag que están por todo el log con la palabra "FLAGPART" en la misma linea, vamos a filtrar esas lineas usando grep.
+\centering
+\begin{tcolorbox}[
+    width=0.7\textwidth,
+    colframe=black,
+    boxrule=1pt,
+    sharp corners,
+    boxsep=0pt,
+    top=0pt,
     left=0pt,
     right=0pt
 ]
-    \centering
-    \vspace{0.2cm}
-    \textbf{Textos censurados}
+\centering
+\includegraphics[
+  width=\linewidth,
+  height=6cm
+]{./img/grep.png}
+    \par
+    \textbf{Filtrando lineas con la palabra "FLAGPART"}
 \end{tcolorbox}
 
-\par\vspace{1cm}
-
-\item Se puede ver que si seleccionamos la parte censurada y la copiamos a un editor de texto habremos obtenido datos interesantes.
-
-\begin{tcolorbox}[
-    colframe=black,
-    boxrule=1pt,
-    sharp corners,
-    boxsep=0pt,
-    left=0pt,
-    right=10pt
-]
-    \begin{minipage}{0.5\linewidth}
-        \centering
-        \small Textos censurados
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.47\linewidth}
-        \centering
-        \small Contenido descubierto
-    \end{minipage}
-
-    \vspace{0.5cm}
-    \centering   
-    \textbf{Descubrimiento de textos censurados}
-\end{tcolorbox}
-
-\item Viendo que en el anterior paso no encontramos nada relevante tendremos que intentar otros métodos, intentemos ver los datos en bruto (Raw Data) usando la herramienta \textbf{strings}, a ver qué encontramos.
+\item En la anterior imagen por intuición ya podemos deducir la flag, pero para poner en practica nuestras habilidades vamos a usar herramientas para que con una sola linea de comando nos devuelva la flag. 
 
 \begin{tcolorbox}[
     colframe=black,
@@ -101,32 +103,12 @@ Primeramente observamos que en el reto ya nos da una pista al decirnos "Our serv
     left=0pt,
     right=0pt
 ]
-    \begin{minipage}{\linewidth}
-        \centering
-    \end{minipage}
-    \centering  
-        \vspace{0cm}
-
-    \textbf{Datos en bruto}
-\end{tcolorbox}
-
-\item Desciframos el cifrado sospechoso.
-\begin{tcolorbox}[
-    colframe=black,
-    boxrule=1pt,
-    sharp corners,
-    boxsep=0pt,
-    top=0pt,
-    left=0pt,
-    right=0pt
-]
-    \begin{minipage}{\linewidth}
-        \centering
-    \end{minipage}
+  \includegraphics[
+  width=\textwidth,
+  height=2cm
+  ]{./img/flag_filtrada.png}
     
-    \centering
-    \vspace{0.2cm}
-    \textbf{Descifrando}
+    \centering\textbf{Obtención de la flag}
 \end{tcolorbox}
 
 \item Introducimos la flag en el reto de Pico CTF para ver si realmente acabamos el reto.
@@ -139,17 +121,18 @@ Primeramente observamos que en el reto ya nos da una pista al decirnos "Our serv
     left=0pt,
     right=0pt
 ]
-    \begin{minipage}{\linewidth}
-        \centering
-    \end{minipage}
-    \vspace{0.5cm}
+  \includegraphics[
+    width=\textwidth,
+    height=3cm
+  ]{./img/introduciendo_flag.png}
     \centering   
     \textbf{Introduciendo flag}
 \end{tcolorbox}
 
 \item Y listo, nos salió las felicitaciones, reto resuelto.
-
+\centering
 \begin{tcolorbox}[
+    width=0.5\textwidth,
     colframe=black,
     boxrule=1pt,
     sharp corners,
@@ -159,9 +142,11 @@ Primeramente observamos que en el reto ya nos da una pista al decirnos "Our serv
     left=10pt,
     right=10pt
 ]
-    \begin{minipage}{\linewidth}
-        \centering
-    \end{minipage}
+  \includegraphics[
+    width=\textwidth,
+    height=5cm
+  ]{./img/resuelto.png}
+
     \centering 
         \vspace{0.1cm}
 
